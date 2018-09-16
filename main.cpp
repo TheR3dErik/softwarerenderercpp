@@ -3,7 +3,7 @@
 #include <SDL2/SDL.h>
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    std::std::cout << "Hello, World!" << std::std::endl;
     return 0;
 }
  */
@@ -12,7 +12,7 @@ int main() {
 #include <iostream>
 #include <vector>
 
-using namespace std;
+#include "Bitmap.h"
 
 int main( int argc, char** argv )
 {
@@ -23,7 +23,7 @@ int main( int argc, char** argv )
             (
                     "SDL2",
                     SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-                    2000, 2000,
+                    1000, 1000,
                     SDL_WINDOW_SHOWN
             );
 
@@ -36,24 +36,14 @@ int main( int argc, char** argv )
 
     SDL_RendererInfo info;
     SDL_GetRendererInfo( renderer, &info );
-    cout << "Renderer name: " << info.name << endl;
-    cout << "Texture formats: " << endl;
+    std::cout << "Renderer name: " << info.name << std::endl;
+    std::cout << "Texture formats: " << std::endl;
     for( Uint32 i = 0; i < info.num_texture_formats; i++ )
     {
-        cout << SDL_GetPixelFormatName( info.texture_formats[i] ) << endl;
+        std::cout << SDL_GetPixelFormatName( info.texture_formats[i] ) << std::endl;
     }
 
-    const unsigned int texWidth = 256;
-    const unsigned int texHeight = 256;
-    SDL_Texture* texture = SDL_CreateTexture
-            (
-                    renderer,
-                    SDL_PIXELFORMAT_ARGB8888,
-                    SDL_TEXTUREACCESS_STREAMING,
-                    texWidth, texHeight
-            );
-
-    vector< unsigned char > pixels( texWidth * texHeight * 4, 0 );
+    Bitmap bitmap{ 256, 256, renderer };
 
     SDL_Event event;
     bool running = true;
@@ -74,34 +64,26 @@ int main( int argc, char** argv )
             }
         }
 
-        // splat down some random pixels
-        for( unsigned int i = 0; i < 1000; i++ )
-        {
-            const unsigned int x = rand() % texWidth;
-            const unsigned int y = rand() % texHeight;
+        //bitmap.clear(Pixel{0,0,255,255});
 
-            const unsigned int offset = ( texWidth * 4 * y ) + x * 4;
-            pixels[ offset + 0 ] = rand() % 256;        // b
-            pixels[ offset + 1 ] = rand() % 256;        // g
-            pixels[ offset + 2 ] = rand() % 256;        // r
-            pixels[ offset + 3 ] = SDL_ALPHA_OPAQUE;    // a
+        // splat down some random pixels
+        for( unsigned int i = 0; i < 500; i++ )
+        {
+            const unsigned int x = rand() % bitmap.get_width();
+            const unsigned int y = rand() % bitmap.get_height();
+
+            //bitmap.set_pixel(x, y, Pixel{ static_cast<std::uint8_t>(rand() % 256), static_cast<std::uint8_t>(rand() % 256), static_cast<std::uint8_t>(rand() % 256), SDL_ALPHA_OPAQUE });
+            bitmap.set_pixel(x,y,Pixel{ 255, 0, 0, 255 });
         }
 
-        SDL_UpdateTexture
-                (
-                        texture,
-                        nullptr,
-                        &pixels[0],
-                        texWidth * 4
-                );
+        bitmap.update_texture(renderer);
 
-        SDL_RenderCopy( renderer, texture, nullptr, nullptr );
         SDL_RenderPresent( renderer );
 
         const Uint64 end = SDL_GetPerformanceCounter();
         const static Uint64 freq = SDL_GetPerformanceFrequency();
         const double seconds = ( end - start ) / static_cast< double >( freq );
-        cout << "Frame time: " << seconds * 1000.0 << "ms" << endl;
+        std::cout << "Frame time: " << seconds * 1000.0 << "ms" << std::endl;
     }
 
     SDL_DestroyRenderer( renderer );

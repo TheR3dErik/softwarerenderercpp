@@ -4,5 +4,5 @@ project(SDLsoftwarerenderer)
 set(CMAKE_CXX_STANDARD 14)
 find_package(SDL2 REQUIRED)
 
-add_executable(SDLsoftwarerenderer main.cpp)
+add_executable(SDLsoftwarerenderer main.cpp Bitmap.cpp Bitmap.h)
 target_link_libraries(SDLsoftwarerenderer ${SDL2_LIBRARIES})

@@ -123,6 +123,33 @@ SDLsoftwarerenderer/fast:
 	$(MAKE) -f CMakeFiles/SDLsoftwarerenderer.dir/build.make CMakeFiles/SDLsoftwarerenderer.dir/build
 .PHONY : SDLsoftwarerenderer/fast
 
+Bitmap.o: Bitmap.cpp.o
+
+.PHONY : Bitmap.o
+
+# target to build an object file
+Bitmap.cpp.o:
+	$(MAKE) -f CMakeFiles/SDLsoftwarerenderer.dir/build.make CMakeFiles/SDLsoftwarerenderer.dir/Bitmap.cpp.o
+.PHONY : Bitmap.cpp.o
+
+Bitmap.i: Bitmap.cpp.i
+
+.PHONY : Bitmap.i
+
+# target to preprocess a source file
+Bitmap.cpp.i:
+	$(MAKE) -f CMakeFiles/SDLsoftwarerenderer.dir/build.make CMakeFiles/SDLsoftwarerenderer.dir/Bitmap.cpp.i
+.PHONY : Bitmap.cpp.i
+
+Bitmap.s: Bitmap.cpp.s
+
+.PHONY : Bitmap.s
+
+# target to generate assembly for a file
+Bitmap.cpp.s:
+	$(MAKE) -f CMakeFiles/SDLsoftwarerenderer.dir/build.make CMakeFiles/SDLsoftwarerenderer.dir/Bitmap.cpp.s
+.PHONY : Bitmap.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... SDLsoftwarerenderer"
+	@echo "... Bitmap.o"
+	@echo "... Bitmap.i"
+	@echo "... Bitmap.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
