@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/erik/CLionProjects/SDLsoftwarerenderer/main.cpp
+iostream
+-
+SDL2/SDL.h
+-
+SDL2/SDL.h
+-
+SDL2/SDL_render.h
+-
+iostream
+-
+vector
+-
+

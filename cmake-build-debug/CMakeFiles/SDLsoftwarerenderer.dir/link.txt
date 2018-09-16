@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/SDLsoftwarerenderer.dir/main.cpp.o  -o SDLsoftwarerenderer -L/usr/lib64  -lSDL2 
