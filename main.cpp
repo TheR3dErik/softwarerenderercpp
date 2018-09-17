@@ -11,7 +11,9 @@ int main() {
 #include <SDL2/SDL_render.h>
 #include <iostream>
 #include <vector>
+#include <cmath>
 #include <random>
+#include <algorithm>
 
 #include "Bitmap.h"
 #include "Vec3d.h"
@@ -46,13 +48,14 @@ int main( int argc, char** argv )
     }
 
     Bitmap bitmap{ 640, 480, renderer };
+    constexpr double max_dist { 500.0 };
 
     std::mt19937 rng;
-    rng.seed(std::random_device()());
+    //rng.seed(std::random_device()());
+    rng.seed(0);
     std::uniform_real_distribution<> dist_x(-bitmap.get_width()/2, bitmap.get_width()/2);
     std::uniform_real_distribution<> dist_y(-bitmap.get_height()/2, bitmap.get_height()/2);
-    std::uniform_real_distribution<> dist_z(190,200);
-    std::uniform_real_distribution<> dist_z_init(0.001,200);
+    std::uniform_real_distribution<> dist_z_init(0.001,max_dist);
 
     constexpr int num_stars { 2000 };
     std::vector<Vec3d> stars;
@@ -62,6 +65,7 @@ int main( int argc, char** argv )
         auto z = dist_z_init(rng);
         stars.push_back(Vec3d{ z*dist_x(rng), z*dist_y(rng), z });
     }
+    std::sort(stars.begin(), stars.end(), [](Vec3d i, Vec3d j) { return i.z > j.z; });
 
     SDL_Event event;
     bool running = true;
@@ -82,12 +86,10 @@ int main( int argc, char** argv )
             }
         }
 
-        bitmap.clear(0xFF000000);
-        //bitmap.set_pixel(100,100,0xFFFFFFFF);
-        for (int i = 0; i < stars.size(); ++i)
+        bitmap.clear(255,0,0,0);
+        for (auto &star : stars)
         {
-            auto star = stars[i];
-            stars[i].z -= 0.01;
+            star.z -= 0.1;
             if (star.z > 0)
             {
                 auto projected_x = star.x / star.z;
@@ -96,17 +98,20 @@ int main( int argc, char** argv )
                 if (projected_x >= -bitmap.get_width() / 2 && projected_x < bitmap.get_width() / 2 &&
                     projected_y >= -bitmap.get_height() / 2 && projected_y < bitmap.get_height() / 2)
                 {
+                    double luminosity = 1 - star.z / max_dist;
+                    luminosity = luminosity*luminosity;
+                    auto i = static_cast<std::uint8_t>(luminosity*255);
                     bitmap.set_pixel(static_cast<int>(projected_x) + bitmap.get_width() / 2,
-                                     static_cast<int>(projected_y) + bitmap.get_height() / 2, 0xFFFFFFFF);
+                                     static_cast<int>(projected_y) + bitmap.get_height() / 2, 255, i,i,i);
                 } else
                 {
-                    auto z = dist_z(rng);
-                    stars[i] = Vec3d{z*dist_x(rng), z*dist_y(rng), z };
+                    auto z = max_dist;
+                    star = Vec3d{z*dist_x(rng), z*dist_y(rng), z };
                 }
             } else
             {
-                auto z = dist_z(rng);
-                stars[i] = Vec3d{z*dist_x(rng), z*dist_y(rng), z };
+                auto z = max_dist;
+                star = Vec3d{z*dist_x(rng), z*dist_y(rng), z };
             }
         }
 

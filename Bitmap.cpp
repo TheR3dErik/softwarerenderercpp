@@ -15,23 +15,6 @@ Bitmap::Bitmap(int width, int height, SDL_Renderer* renderer): m_width{ width },
             );
 }
 
-#include <iostream>
-
-void Bitmap::clear(Pixel color)
-{
-    std::fill(m_pixels.begin(), m_pixels.end(), color);
-}
-
-void Bitmap::set_pixel(int x, int y, Pixel p)
-{
-    m_pixels[y*m_width + x] = p;
-}
-
-Pixel Bitmap::get_pixel(int x, int y) const
-{
-    return m_pixels[y*m_width + x];
-}
-
 void Bitmap::update_texture(SDL_Renderer *renderer)
 {
     SDL_UpdateTexture
