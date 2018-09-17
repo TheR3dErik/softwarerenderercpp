@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/home/erik/CLionProjects/SDLsoftwarerenderer/Bitmap.h
+cstdint
+-
+vector
+-
+SDL2/SDL.h
+-
+
+/home/erik/CLionProjects/SDLsoftwarerenderer/Vec3d.h
+
 /home/erik/CLionProjects/SDLsoftwarerenderer/main.cpp
 iostream
 -
@@ -19,4 +29,10 @@ iostream
 -
 vector
 -
+random
+-
+Bitmap.h
+/home/erik/CLionProjects/SDLsoftwarerenderer/Bitmap.h
+Vec3d.h
+/home/erik/CLionProjects/SDLsoftwarerenderer/Vec3d.h
 

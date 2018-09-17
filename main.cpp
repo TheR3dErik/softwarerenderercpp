@@ -11,8 +11,10 @@ int main() {
 #include <SDL2/SDL_render.h>
 #include <iostream>
 #include <vector>
+#include <random>
 
 #include "Bitmap.h"
+#include "Vec3d.h"
 
 int main( int argc, char** argv )
 {
@@ -23,7 +25,7 @@ int main( int argc, char** argv )
             (
                     "SDL2",
                     SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-                    1000, 1000,
+                    640*2, 480*2,
                     SDL_WINDOW_SHOWN
             );
 
@@ -43,7 +45,23 @@ int main( int argc, char** argv )
         std::cout << SDL_GetPixelFormatName( info.texture_formats[i] ) << std::endl;
     }
 
-    Bitmap bitmap{ 256, 256, renderer };
+    Bitmap bitmap{ 640, 480, renderer };
+
+    std::mt19937 rng;
+    rng.seed(std::random_device()());
+    std::uniform_real_distribution<> dist_x(-bitmap.get_width()/2, bitmap.get_width()/2);
+    std::uniform_real_distribution<> dist_y(-bitmap.get_height()/2, bitmap.get_height()/2);
+    std::uniform_real_distribution<> dist_z(190,200);
+    std::uniform_real_distribution<> dist_z_init(0.001,200);
+
+    constexpr int num_stars { 2000 };
+    std::vector<Vec3d> stars;
+    stars.reserve(num_stars);
+    for (int i = 0; i < num_stars; ++i)
+    {
+        auto z = dist_z_init(rng);
+        stars.push_back(Vec3d{ z*dist_x(rng), z*dist_y(rng), z });
+    }
 
     SDL_Event event;
     bool running = true;
@@ -64,16 +82,32 @@ int main( int argc, char** argv )
             }
         }
 
-        //bitmap.clear(Pixel{0,0,255,255});
-
-        // splat down some random pixels
-        for( unsigned int i = 0; i < 500; i++ )
+        bitmap.clear(0xFF000000);
+        //bitmap.set_pixel(100,100,0xFFFFFFFF);
+        for (int i = 0; i < stars.size(); ++i)
         {
-            const unsigned int x = rand() % bitmap.get_width();
-            const unsigned int y = rand() % bitmap.get_height();
+            auto star = stars[i];
+            stars[i].z -= 0.01;
+            if (star.z > 0)
+            {
+                auto projected_x = star.x / star.z;
+                auto projected_y = star.y / star.z;
 
-            //bitmap.set_pixel(x, y, Pixel{ static_cast<std::uint8_t>(rand() % 256), static_cast<std::uint8_t>(rand() % 256), static_cast<std::uint8_t>(rand() % 256), SDL_ALPHA_OPAQUE });
-            bitmap.set_pixel(x,y,Pixel{ 255, 0, 0, 255 });
+                if (projected_x >= -bitmap.get_width() / 2 && projected_x < bitmap.get_width() / 2 &&
+                    projected_y >= -bitmap.get_height() / 2 && projected_y < bitmap.get_height() / 2)
+                {
+                    bitmap.set_pixel(static_cast<int>(projected_x) + bitmap.get_width() / 2,
+                                     static_cast<int>(projected_y) + bitmap.get_height() / 2, 0xFFFFFFFF);
+                } else
+                {
+                    auto z = dist_z(rng);
+                    stars[i] = Vec3d{z*dist_x(rng), z*dist_y(rng), z };
+                }
+            } else
+            {
+                auto z = dist_z(rng);
+                stars[i] = Vec3d{z*dist_x(rng), z*dist_y(rng), z };
+            }
         }
 
         bitmap.update_texture(renderer);

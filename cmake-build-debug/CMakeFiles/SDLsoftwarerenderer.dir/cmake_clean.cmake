@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SDLsoftwarerenderer.dir/main.cpp.o"
   "CMakeFiles/SDLsoftwarerenderer.dir/Bitmap.cpp.o"
+  "CMakeFiles/SDLsoftwarerenderer.dir/Vec3d.cpp.o"
   "SDLsoftwarerenderer.pdb"
   "SDLsoftwarerenderer"
 )

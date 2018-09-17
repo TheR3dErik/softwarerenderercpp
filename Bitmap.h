@@ -10,17 +10,7 @@
 
 #include <SDL2/SDL.h>
 
-union Pixel
-{
-    struct
-    {
-        std::uint8_t b;
-        std::uint8_t g;
-        std::uint8_t r;
-        std::uint8_t a;
-    };
-    std::uint32_t color;
-};
+using Pixel = std::uint32_t;
 
 class Bitmap {
 private:
@@ -36,7 +26,7 @@ public:
     inline int get_width() const { return m_width; }
     inline int get_height() const { return m_height; }
 
-    void clear(Pixel color = Pixel{0,0,0,1});
+    void clear(Pixel color = 0xFF000000);
     void set_pixel(int x, int y, Pixel p);
     Pixel get_pixel(int x, int y) const;
 

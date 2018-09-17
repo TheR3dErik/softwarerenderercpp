@@ -86,6 +86,12 @@
 		<Unit filename="/home/erik/CLionProjects/SDLsoftwarerenderer/Bitmap.h">
 			<Option target="SDLsoftwarerenderer"/>
 		</Unit>
+		<Unit filename="/home/erik/CLionProjects/SDLsoftwarerenderer/Vec3d.cpp">
+			<Option target="SDLsoftwarerenderer"/>
+		</Unit>
+		<Unit filename="/home/erik/CLionProjects/SDLsoftwarerenderer/Vec3d.h">
+			<Option target="SDLsoftwarerenderer"/>
+		</Unit>
 		<Unit filename="/home/erik/CLionProjects/SDLsoftwarerenderer/main.cpp">
 			<Option target="SDLsoftwarerenderer"/>
 		</Unit>

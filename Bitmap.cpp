@@ -15,6 +15,8 @@ Bitmap::Bitmap(int width, int height, SDL_Renderer* renderer): m_width{ width },
             );
 }
 
+#include <iostream>
+
 void Bitmap::clear(Pixel color)
 {
     std::fill(m_pixels.begin(), m_pixels.end(), color);

@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/SDLsoftwarerenderer.dir/main.cpp.o CMakeFiles/SDLsoftwarerenderer.dir/Bitmap.cpp.o  -o SDLsoftwarerenderer -L/usr/lib64  -lSDL2 
+/usr/bin/c++  -g   CMakeFiles/SDLsoftwarerenderer.dir/main.cpp.o CMakeFiles/SDLsoftwarerenderer.dir/Bitmap.cpp.o CMakeFiles/SDLsoftwarerenderer.dir/Vec3d.cpp.o  -o SDLsoftwarerenderer -L/usr/lib64  -lSDL2 

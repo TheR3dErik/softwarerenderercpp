@@ -4,6 +4,10 @@
 CMakeFiles/SDLsoftwarerenderer.dir/Bitmap.cpp.o: ../Bitmap.cpp
 CMakeFiles/SDLsoftwarerenderer.dir/Bitmap.cpp.o: ../Bitmap.h
 
+CMakeFiles/SDLsoftwarerenderer.dir/Vec3d.cpp.o: ../Vec3d.cpp
+CMakeFiles/SDLsoftwarerenderer.dir/Vec3d.cpp.o: ../Vec3d.h
+
 CMakeFiles/SDLsoftwarerenderer.dir/main.cpp.o: ../Bitmap.h
+CMakeFiles/SDLsoftwarerenderer.dir/main.cpp.o: ../Vec3d.h
 CMakeFiles/SDLsoftwarerenderer.dir/main.cpp.o: ../main.cpp
 

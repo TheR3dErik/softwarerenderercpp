@@ -150,6 +150,33 @@ Bitmap.cpp.s:
 	$(MAKE) -f CMakeFiles/SDLsoftwarerenderer.dir/build.make CMakeFiles/SDLsoftwarerenderer.dir/Bitmap.cpp.s
 .PHONY : Bitmap.cpp.s
 
+Vec3d.o: Vec3d.cpp.o
+
+.PHONY : Vec3d.o
+
+# target to build an object file
+Vec3d.cpp.o:
+	$(MAKE) -f CMakeFiles/SDLsoftwarerenderer.dir/build.make CMakeFiles/SDLsoftwarerenderer.dir/Vec3d.cpp.o
+.PHONY : Vec3d.cpp.o
+
+Vec3d.i: Vec3d.cpp.i
+
+.PHONY : Vec3d.i
+
+# target to preprocess a source file
+Vec3d.cpp.i:
+	$(MAKE) -f CMakeFiles/SDLsoftwarerenderer.dir/build.make CMakeFiles/SDLsoftwarerenderer.dir/Vec3d.cpp.i
+.PHONY : Vec3d.cpp.i
+
+Vec3d.s: Vec3d.cpp.s
+
+.PHONY : Vec3d.s
+
+# target to generate assembly for a file
+Vec3d.cpp.s:
+	$(MAKE) -f CMakeFiles/SDLsoftwarerenderer.dir/build.make CMakeFiles/SDLsoftwarerenderer.dir/Vec3d.cpp.s
+.PHONY : Vec3d.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... Bitmap.o"
 	@echo "... Bitmap.i"
 	@echo "... Bitmap.s"
+	@echo "... Vec3d.o"
+	@echo "... Vec3d.i"
+	@echo "... Vec3d.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
