@@ -20,8 +20,14 @@ private:
     std::vector<Pixel> m_pixels;
 
     SDL_Texture* m_texture;
+    SDL_Renderer* m_renderer;
 public:
     Bitmap(int width, int height, SDL_Renderer* renderer);
+    ~Bitmap();
+    Bitmap(const Bitmap& other);
+    Bitmap(Bitmap&& other) noexcept;
+    Bitmap& operator=(const Bitmap& other);
+    Bitmap& operator=(Bitmap&& other) noexcept;
 
     inline int get_width() const { return m_width; }
     inline int get_height() const { return m_height; }
@@ -32,7 +38,8 @@ public:
     inline void set_pixel(int x, int y, std::uint8_t a, std::uint8_t r, std::uint8_t g, std::uint8_t b) { m_pixels[y*m_width + x] = (a << 24) | (r << 16) | (g << 8) | (b); }
     inline Pixel get_pixel(int x, int y) const { return m_pixels[y*m_width + x]; }
 
-    void update_texture(SDL_Renderer* renderer);
+    void update_texture();
+    void render_copy();
 };
 
 

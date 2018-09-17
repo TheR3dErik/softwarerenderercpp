@@ -15,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bitmap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Bitmap.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bitmap.h" beforeDir="false" afterPath="$PROJECT_DIR$/Bitmap.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDLsoftwarerenderer.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDLsoftwarerenderer.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDLsoftwarerenderer.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SDLsoftwarerenderer.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/SDLsoftwarerenderer" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SDLsoftwarerenderer" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
@@ -39,16 +40,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="5505" />
-          <entry key="h" value="2314" />
-          <entry key="txt" value="248" />
+          <entry key="cpp" value="9618" />
+          <entry key="h" value="2536" />
+          <entry key="txt" value="302" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="78" />
-          <entry key="ObjectiveC" value="7819" />
-          <entry key="PLAIN_TEXT" value="170" />
+          <entry key="ObjectiveC" value="12154" />
+          <entry key="PLAIN_TEXT" value="224" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -71,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Bitmap.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="476">
+              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
               <folding>
                 <element signature="e#114#132#0" expanded="true" />
               </folding>
@@ -83,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Bitmap.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="287">
+              <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -92,8 +93,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+            <state relative-caret-position="739">
+              <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
               <folding>
                 <element signature="e#136#157#0" expanded="true" />
               </folding>
@@ -148,6 +149,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="1920" />
     <option name="width" value="1920" />
     <option name="height" value="2131" />
   </component>
@@ -216,7 +218,7 @@
       <option name="presentableId" value="Default" />
       <updated>1537132642754</updated>
       <workItem from="1537132644234" duration="9983000" />
-      <workItem from="1537197400168" duration="2235000" />
+      <workItem from="1537197400168" duration="12583000" />
     </task>
     <task id="LOCAL-00001" summary="Separated functionality of program with bitmap class similar to that from tutorials of thebennybox">
       <created>1537136922003</created>
@@ -232,29 +234,36 @@
       <option name="project" value="LOCAL" />
       <updated>1537157350242</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Made farther stars darker and refactored some code">
+      <created>1537200566068</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1537200566068</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12218000" />
+    <option name="totallyTimeSpent" value="22566000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="2131" extended-state="0" />
+    <frame x="0" y="0" width="3840" height="2131" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16846652" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.082714744" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32959756" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32959756" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3998981" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32959756" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32977098" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.32959756" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32959756" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="CMake" order="12" />
@@ -273,7 +282,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Separated functionality of program with bitmap class similar to that from tutorials of thebennybox" />
     <MESSAGE value="Made simple star field with basic 3d effect" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made simple star field with basic 3d effect" />
+    <MESSAGE value="Made farther stars darker and refactored some code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made farther stars darker and refactored some code" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Vec3d.cpp">
@@ -295,8 +305,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Bitmap.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="476">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
           <folding>
             <element signature="e#114#132#0" expanded="true" />
           </folding>
@@ -305,15 +315,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Bitmap.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="287">
+          <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+        <state relative-caret-position="739">
+          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
           <folding>
             <element signature="e#136#157#0" expanded="true" />
           </folding>

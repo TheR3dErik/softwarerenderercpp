@@ -29,7 +29,13 @@ iostream
 -
 vector
 -
+cmath
+-
 random
+-
+algorithm
+-
+chrono
 -
 Bitmap.h
 /home/erik/CLionProjects/SDLsoftwarerenderer/Bitmap.h
